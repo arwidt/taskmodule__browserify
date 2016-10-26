@@ -7,9 +7,10 @@ var sourcemaps = require('gulp-sourcemaps');
 var gutil = require('gulp-util');
 var gif = require('gulp-if');
 
-module.exports = function(source, output, noMinify) {
+module.exports = function(source, output, debug, noParse) {
     return function(callback) {
-        noMinify = noMinify || false;
+        debug = debug || false;
+        noParse = noParse || [];
 
         var onError = function (err) {
             gutil.beep();
@@ -19,7 +20,9 @@ module.exports = function(source, output, noMinify) {
 
         var b = browserify({
             entries: source,
-            debug: true
+            fast: debug,
+            debug: debug,
+            noParse: noParse
         });
 
         var paths = output.split('/');
@@ -30,10 +33,10 @@ module.exports = function(source, output, noMinify) {
             .on('error', onError)
             .pipe(source_stream(outputName + ".js"))
             .pipe(buffer())
-            .pipe(gif(!noMinify, sourcemaps.init({loadMaps: true})))
-            .pipe(gif(!noMinify, uglify()))
+            .pipe(gif(!debug, sourcemaps.init({loadMaps: true})))
+            .pipe(gif(!debug, uglify()))
             .on('error', onError)
-            .pipe(gif(!noMinify, sourcemaps.write('./')))
+            .pipe(gif(!debug, sourcemaps.write('./')))
             .pipe(gulp.dest(outputPath))
             .on('finish', function() {
                 if (callback) {

@@ -21,7 +21,8 @@
   "homepage": "https://github.com/arwidt/taskmodule__browserify#readme",
   "devDependencies": {
     "async": "^2.1.2",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "jquery": "^3.1.1"
   },
   "dependencies": {
     "browserify": "^13.1.1",
