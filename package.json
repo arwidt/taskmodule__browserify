@@ -1,11 +1,8 @@
 {
   "name": "taskmodule__browserify",
-  "version": "1.0.0",
+  "version": "0.9.0",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/arwidt/taskmodule__browserify.git"
   },
-  "author": "",
+  "keywords": [
+    "buildscript",
+    "gulp",
+    "browserify",
+    "javascript",
+    "commonjs",
+    "gulp-task",
+    "gulp-browserify"
+  ],
+  "author": "Arwid Thornstrom <arwidt@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/arwidt/taskmodule__browserify/issues"

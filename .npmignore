@@ -1,0 +1,4 @@
+dist/
+gulpfile.js
+test/
+.gitignore
