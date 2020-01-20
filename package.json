@@ -1,6 +1,6 @@
 {
   "name": "taskmodule__browserify",
-  "version": "0.9.4",
+  "version": "0.10.0",
   "description": "GulpTaskmodule to compile js with browserify, works good with async.js",
   "main": "index.js",
   "scripts": {
